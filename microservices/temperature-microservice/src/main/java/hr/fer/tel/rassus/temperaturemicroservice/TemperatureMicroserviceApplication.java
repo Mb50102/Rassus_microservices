@@ -1,10 +1,9 @@
-package hr.fer.tel.rassus.humiditymicroservice;
+package hr.fer.tel.rassus.temperaturemicroservice;
 
 
 import com.opencsv.CSVReader;
-import hr.fer.tel.rassus.humiditymicroservice.model.Measure;
-import hr.fer.tel.rassus.humiditymicroservice.repositories.MeasureRepository;
-import hr.fer.tel.rassus.humiditymicroservice.services.MeasureService;
+import hr.fer.tel.rassus.temperaturemicroservice.model.Measure;
+import hr.fer.tel.rassus.temperaturemicroservice.repositories.MeasureRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,7 +13,7 @@ import java.io.FileReader;
 
 
 @SpringBootApplication
-public class HumidityMicroserviceApplication implements CommandLineRunner {
+public class TemperatureMicroserviceApplication implements CommandLineRunner {
 
 	@Autowired
 	private MeasureRepository measureRepository;
@@ -22,13 +21,13 @@ public class HumidityMicroserviceApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(HumidityMicroserviceApplication.class, args);
+		SpringApplication.run(TemperatureMicroserviceApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
 
-		try (CSVReader csvReader = new CSVReader(new FileReader("D:/Rassus_mikrousluge/microservices/humidity-microservice/src/main/resources/measures.csv"))) {
+		try (CSVReader csvReader = new CSVReader(new FileReader("D:/Rassus_mikrousluge/microservices/temperature-microservice/src/main/resources/measures.csv"))) {
 			String[] values = null;
 			csvReader.skip(1);
 			while ((values = csvReader.readNext()) != null) {

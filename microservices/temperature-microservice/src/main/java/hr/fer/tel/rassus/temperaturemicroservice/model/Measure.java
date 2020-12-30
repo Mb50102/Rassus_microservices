@@ -1,4 +1,4 @@
-package hr.fer.tel.rassus.humiditymicroservice.model;
+package hr.fer.tel.rassus.temperaturemicroservice.model;
 
 import javax.persistence.*;
 
