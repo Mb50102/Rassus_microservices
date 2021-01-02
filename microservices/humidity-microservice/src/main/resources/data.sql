@@ -1,1 +1,1 @@
-create table TEST as SELECT * FROM CSVREAD('D:\Rassus_mikrousluge\microservices\humidity-microservice\src\main\resources\measures.csv')
+create table TEST as SELECT * FROM CSVREAD('src\main\resources\measures.csv')
