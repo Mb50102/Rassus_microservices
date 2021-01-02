@@ -28,7 +28,7 @@ public class HumidityMicroserviceApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		try (CSVReader csvReader = new CSVReader(new FileReader("D:/Rassus_mikrousluge/microservices/humidity-microservice/src/main/resources/measures.csv"))) {
+		try (CSVReader csvReader = new CSVReader(new FileReader("src/main/resources/measures.csv"))) {
 			String[] values = null;
 			csvReader.skip(1);
 			while ((values = csvReader.readNext()) != null) {
