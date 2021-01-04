@@ -3,24 +3,23 @@ package hr.fer.tel.rassus.aggregatorMicroservice.models;
 import java.io.Serializable;
 
 public class Temperature implements Serializable {
-    private int temperature;
+    private double temperature;
 
     public Temperature(){
 
     }
 
-    public Temperature(int temperature) {
+    public Temperature(double temperature) {
         this.temperature = temperature;
     }
 
-    public int getTemperature() {
+    public double getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(int temperature) {
+    public void setTemperature(double temperature) {
         this.temperature = temperature;
     }
-
 
 }
 

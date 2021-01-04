@@ -10,14 +10,14 @@ public class TemperatureMeasure {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int  Id;
 
-    private int temperature;
+    private double temperature;
 
 
 
     public TemperatureMeasure() {
     }
 
-    public TemperatureMeasure(int temperature){
+    public TemperatureMeasure(double temperature){
         this.temperature=temperature;
     }
 
@@ -30,11 +30,11 @@ public class TemperatureMeasure {
 
     }
 
-    public int getTemperature() {
+    public double getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(int temperature) {
+    public void setTemperature(double temperature) {
         this.temperature = temperature;
     }
 

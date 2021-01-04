@@ -5,6 +5,7 @@ import hr.fer.tel.rassus.aggregatorMicroservice.models.Reading;
 import hr.fer.tel.rassus.aggregatorMicroservice.models.Temperature;
 import hr.fer.tel.rassus.aggregatorMicroservice.services.ReadingsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,14 +16,16 @@ public class ReadingsController {
     @Autowired
     private ReadingsService readingsService;
 
+    @Value("${tunit}")
+    private String temperatureUnit;
+
     @GetMapping("/readings")
     public Reading getCurrentReadings(){
         Humidity humidityReading = readingsService.getHumidityReading();
-
-        Temperature temperatureReading= readingsService.getTemperatureReading();
-
-        Reading reading=new Reading(humidityReading.getHumidity(),temperatureReading.getTemperature());
-
-        return  reading;
+        Temperature temperatureReading = readingsService.getTemperatureReading();
+        Reading reading=new Reading(humidityReading.getHumidity(), temperatureReading.getTemperature(), temperatureUnit);
+        return reading;
     }
+
+
 }

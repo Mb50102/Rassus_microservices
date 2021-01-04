@@ -15,14 +15,13 @@ import java.io.FileReader;
 
 @SpringBootApplication
 @EnableEurekaClient
+
 public class HumidityMicroserviceApplication implements CommandLineRunner {
 
 	@Autowired
 	private MeasureRepository measureRepository;
 
-
 	public static void main(String[] args) {
-
 		SpringApplication.run(HumidityMicroserviceApplication.class, args);
 	}
 
