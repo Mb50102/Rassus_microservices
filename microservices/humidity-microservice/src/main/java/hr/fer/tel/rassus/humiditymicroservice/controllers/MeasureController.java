@@ -1,6 +1,6 @@
 package hr.fer.tel.rassus.humiditymicroservice.controllers;
 
-import hr.fer.tel.rassus.humiditymicroservice.model.Measure;
+import hr.fer.tel.rassus.humiditymicroservice.model.HumidityMeasure;
 import hr.fer.tel.rassus.humiditymicroservice.services.MeasureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +16,7 @@ public class MeasureController {
 
     @GetMapping("/current-reading")
     public int getCurrentReading(){
-        Optional<Measure> currentReading = measureService.getReading();
+        Optional<HumidityMeasure> currentReading = measureService.getReading();
         return currentReading.get().getHumidity();
 
     }

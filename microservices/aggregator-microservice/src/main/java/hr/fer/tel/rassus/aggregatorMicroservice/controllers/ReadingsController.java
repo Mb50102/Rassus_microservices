@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-
 
 @RestController
 public class ReadingsController {
@@ -24,7 +22,6 @@ public class ReadingsController {
         Temperature temperatureReading= readingsService.getTemperatureReading();
 
         Reading reading=new Reading(humidityReading.getHumidity(),temperatureReading.getTemperature());
-
 
         return  reading;
     }

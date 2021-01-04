@@ -1,1 +1,0 @@
-create table TEST as SELECT * FROM CSVREAD('src\main\resources\measures.csv')
