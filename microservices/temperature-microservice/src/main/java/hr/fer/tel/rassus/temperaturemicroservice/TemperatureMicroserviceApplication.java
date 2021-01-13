@@ -29,7 +29,7 @@ public class TemperatureMicroserviceApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		try (CSVReader csvReader = new CSVReader(new FileReader("src/main/resources/measures.csv"))) {
+		try (CSVReader csvReader = new CSVReader(new FileReader(getClass().getResource("/measures.csv").getPath()))) {
 			String[] values = null;
 			csvReader.skip(1);
 			while ((values = csvReader.readNext()) != null) {
